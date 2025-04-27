@@ -1,0 +1,88 @@
+#contacts {
+    padding: 20px;
+    text-align: center; /* Центрируем текст */
+}
+
+.contact-description {
+    text-align: center; /* Центрируем текст */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    font-size: 22px; /* Размер шрифта (можно настроить) */
+    color: #000; /* Цвет текста */
+}
+
+.contact-columns {
+    display: flex; /* Используем flexbox для создания трех колонок */
+    justify-content: space-around; /* Распределяем колонки по горизонтали */
+}
+
+.contact-column {
+    flex: 1; /* Каждая колонка занимает равную ширину */
+    padding: 10px; /* Отступы внутри колонок */
+}
+
+.qr-code, .vk-logo {
+    width: 10vw; /* Устанавливаем ширину QR-кода и логотипа */
+    height: auto; /* Пропорциональная высота */
+    margin-top: 10px; /* Устанавливаем отступ сверху */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавное увеличение и изменение тени */
+    cursor: pointer; /* Курсор в виде указателя */
+}
+
+.qr-code:hover, .vk-logo:hover {
+    transform: scale(1.1); /* Увеличение на 10% */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Увеличение тени */
+}
+
+.telegram-link {
+     text-decoration: none; /* Убираем подчеркивание */
+     color: orange; /* Оранжевый цвет для выделения */
+     font-weight: bold; /* Сделать текст выделения более выразительным */
+}
+
+.telegram-link:hover {
+    text-decoration: underline; /* Подчеркивание при наведении (по желанию) */
+}
+
+p {
+    line-height: 1.5; /* Увеличиваем межстрочный интервал */
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрываем модальное окно по умолчанию */
+    position: fixed; /* Фиксированное положение */
+    z-index: 1000; /* Поверх других элементов */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    background-color: rgba(0, 0, 0, 0.9); /* Полупрозрачный черный фон */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+}
+
+.modal img {
+    max-width: 90%; /* Максимальная ширина изображения */
+    max-height: 90%; /* Максимальная высота изображения */
+    border-radius: 10px; /* Закругленные углы */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+    .contact-description {
+        font-size: 18px; /* Уменьшаем размер шрифта */
+    }
+
+    .contact-columns {
+        display: block; /* Изменяем на блочную структуру */
+    }
+
+    .contact-column {
+        margin-bottom: 20px; /* Отступы между колонками */
+    }
+
+    .qr-code, .vk-logo {
+        width: 30vw; /* Увеличиваем QR-коды и логотипы для мобильных устройств */
+    }
+}

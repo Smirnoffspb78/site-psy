@@ -1,0 +1,126 @@
+.reviews-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.review-slide {
+    display: none; /* Скрывает все слайды по умолчанию */
+    text-align: center; /* Центрирует текст в слайде */
+}
+
+.review-slide.active {
+    display: block; /* Отображает активный слайд */
+}
+
+.prev-btn, .next-btn {
+    font-size: 30px; /* Увеличение размера шрифта */
+        background-color: rgba(255, 165, 0, 0.8); /* Оранжевый фон */
+        border: none; /* Без рамки */
+        cursor: pointer; /* Курсор в виде указателя */
+        position: absolute; /* Абсолютное позиционирование */
+        top: 50%; /* Центрирование по вертикали */
+        transform: translateY(-50%); /* Центрирование по вертикали */
+        width: 40px; /* Ширина кнопки */
+        height: 40px; /* Высота кнопки */
+        border-radius: 50%; /* Круглая форма */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white; /* Белый цвет стрелок */
+        transition: background-color 0.3s ease; /* Плавное изменение фона */
+}
+
+.prev-btn {
+    left: -60px; /* Сдвиньте влево за пределы рамки */
+    z-index: 1; /* Убедитесь, что кнопка отображается поверх других элементов */
+}
+
+.next-btn {
+    right: -60px; /* Сдвиньте вправо за пределы рамки */
+    z-index: 1; /* Убедитесь, что кнопка отображается поверх других элементов */
+}
+
+.reviews-wrapper {
+    border: 4px solid rgba(255, 165, 0, 0.5); /* Увеличьте ширину рамки */
+    border-radius: 25px; /* Закругление углов */
+    padding: 20px; /* Уменьшите отступы внутри рамки */
+    margin: 20px auto; /* Центрирование и отступы сверху и снизу */
+    position: relative; /* Для позиционирования кнопок */
+    background-color: #fff; /* Цвет фона */
+    max-width: 700px; /* Установите максимальную ширину рамки */
+    overflow: visible; /* Позволяет стрелкам быть видимыми */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Небольшая тень для объема (опционально) */
+}
+
+.review {
+    max-width: 100%; /* Ограничьте ширину текста внутри рамки */
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+.review p {
+    margin: 15px 0; /* Отступы для текста отзыва */
+    text-align: justify; /* Выравнивание по ширине */
+    font-size: 16px; /* Увеличим размер шрифта */
+    line-height: 1.6; /* Увеличим межстрочный интервал */
+}
+
+.review-info {
+    color: #666; /* Серый цвет */
+    font-size: 14px; /* Уменьшаем размер шрифта */
+    margin-top: 15px; /* Отступ сверху */
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+.stars {
+    color: #FFD700; /* Золотой цвет для звезд */
+    font-size: 24px; /* Размер звезд */
+    margin-bottom: 15px; /* Отступ снизу */
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+/* Индикаторы прогресса (точки) */
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.slider-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 165, 0, 0.5); /* Светло-оранжевый цвет */
+    border-radius: 50%; /* Круглая форма */
+    margin: 0 5px; /* Отступ между точками */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.slider-indicators .indicator.active {
+    background-color: rgba(255, 165, 0, 1); /* Ярко-оранжевый цвет для активной точки */
+}
+
+
+/* Стили для мобильных устройств */
+@media (max-width: 600px) {
+    .reviews-wrapper {
+        position: relative;
+        width: 67%;
+        border: 2px solid rgba(255, 165, 0, 0.5);
+        padding: 10px;
+    }
+
+    .prev-btn, .next-btn {
+        font-size: 20px;
+    }
+
+    .stars {
+        font-size: 20px; /* Уменьшаем размер звезд для мобильных */
+    }
+
+    .review-info {
+        font-size: 12px; /* Уменьшаем размер шрифта для мобильных */
+    }
+}

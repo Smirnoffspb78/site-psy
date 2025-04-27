@@ -1,0 +1,50 @@
+.requests-container {
+    display: flex; /* Используем flexbox для выравнивания */
+    flex-wrap: wrap; /* Позволяет переносить плашки на новую строку */
+    justify-content: center; /* Центрируем плашки по горизонтали */
+    margin: 0 25%; /* Устанавливаем равномерный отступ слева и справа в процентах */
+}
+
+.request-item {
+    background-color: #fff; /* Цвет фона плашки */
+    border: 4px solid rgba(255, 165, 0, 0.5); /* Прозрачная оранжевая рамка (толщина 4px) */
+    border-radius: 30px; /* Сильно скругленные края для создания полукруглой формы */
+    padding: 15px 25px; /* Отступы внутри плашки */
+    margin: 10px; /* Отступ между плашками */
+    font-size: 20px; /* Увеличиваем шрифт */
+    font-weight: bold; /* Делаем шрифт жирным */
+    color: #333; /* Цвет текста */
+    text-align: center; /* Центрируем текст внутри плашки */
+    transition: background-color 0.3s; /* Эффект при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Небольшая тень для объема (опционально) */
+}
+
+/* Эффект при наведении */
+.request-item:hover {
+    background-color: #FFE5B4; /* Изменяем цвет фона при наведении */
+}
+
+.requests-intro {
+    font-size: 24px !important; /* Увеличенный шрифт */
+    text-align: left !important; /* Выровняем текст влево */
+    margin-left: 30%; /* Отступ слева, измените процент по необходимости */
+    margin-bottom: 20px !important; /* Отступ снизу */
+    color: #333 !important; /* Цвет текста */
+}
+
+.highlight {
+    color: orange; /* Оранжевый цвет для выделения */
+    font-weight: bold; /* Сделать текст выделения более выразительным */
+}
+
+@media (max-width: 768px) { /* Для экранов шириной 768px и меньше */
+    .request-item {
+        font-size: 16px; /* Уменьшенный шрифт для мобильных */
+        padding: 10px 15px; /* Уменьшенные отступы для мобильных */
+    }
+
+    .requests-intro {
+        font-size: 20px !important; /* Уменьшенный шрифт */
+        margin-left: 10%; /* Уменьшенный отступ слева для мобильных */
+    }
+}

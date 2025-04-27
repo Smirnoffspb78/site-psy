@@ -1,0 +1,107 @@
+#education {
+    padding: 20px 15%; /* Отступы для всего раздела */
+    font-size: 20px; /* Увеличение размера шрифта */
+}
+
+.education-item {
+    display: flex; /* Flexbox для выравнивания */
+    align-items: center; /* Центрирование по вертикали */
+    margin-bottom: 15px; /* Отступы между элементами */
+}
+
+.year-marker {
+    background-color: rgba(255, 165, 0, 0.5); /* Полупрозрачный оранжевый цвет для маркера */
+    border-radius: 50%; /* Круглая форма маркера */
+    padding: 10px; /* Отступы внутри маркера */
+    margin-right: 15px; /* Отступ справа от маркера */
+    font-weight: bold; /* Жирный шрифт для года */
+    width: 40px; /* Ширина маркера */
+    height: 40px; /* Высота маркера */
+    display: flex; /* Flexbox для центровки текста в маркере */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+}
+
+.image-gallery {
+    display: flex; /* Используем flexbox для изображения */
+    flex-wrap: wrap; /* Позволяет изображениям переноситься */
+    justify-content: center; /* Центрируем изображения */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.image-item {
+    margin: 10px; /* Отступ между изображениями */
+}
+
+.image-item img {
+    width: 150px; /* Установите желаемую ширину изображения */
+    height: auto; /* Пропорциональная высота */
+    border-radius: 10px; /* Закругленные углы */
+    transition: box-shadow 0.3s ease; /* Плавное изменение тени */
+}
+
+.image-item img:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Тень при наведении */
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрываем модальное окно по умолчанию */
+    position: fixed; /* Фиксированное положение */
+    z-index: 1000; /* Поверх других элементов */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Прокрутка, если нужно */
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+}
+
+.text-content {
+    text-indent: 30px; /* Устанавливаем отступ для первой строки (можно изменить значение) */
+    line-height: 1.6;
+    text-align: justify; /* Выравнивание текста по ширине */
+}
+
+@media (max-width: 600px) {
+    #education {
+        padding: 15px 5%; /* Уменьшаем отступы для мобильных */
+        font-size: 16px; /* Уменьшаем размер шрифта */
+    }
+
+    .education-item {
+        flex-direction: column; /* Выстраиваем элементы по вертикали */
+        align-items: flex-start; /* Выравниваем по началу */
+    }
+
+    .year-marker {
+        width: 30px; /* Уменьшаем размер маркера */
+        height: 30px; /* Уменьшаем размер маркера */
+        padding: 8px; /* Уменьшаем отступы внутри маркера */
+        font-size: 14px; /* Уменьшаем размер шрифта */
+        margin-right: 0; /* Убираем отступ справа */
+        margin-bottom: 10px; /* Добавляем отступ снизу для отделения маркера */
+    }
+
+    .image-gallery {
+        margin-top: 15px; /* Немного уменьшаем отступ сверху */
+        flex-direction: column; /* Выстраиваем изображения по вертикали */
+        align-items: center; /* Центрируем изображения */
+    }
+
+    .image-item {
+        margin: 10px 0; /* Убираем боковые отступы, оставляем только вертикальные */
+        width: 100%; /* Ширина изображения на всю ширину экрана */
+    }
+
+    .image-item img {
+        width: 100%; /* Ширина изображения на всю ширину экрана */
+        height: auto; /* Пропорциональная высота */
+        border-radius: 10px; /* Закругленные углы */
+    }
+
+    .text-content {
+        text-indent: 20px; /* Уменьшаем отступ первой строки */
+        font-size: 16px; /* Уменьшаем размер шрифта для текста */
+    }
+}

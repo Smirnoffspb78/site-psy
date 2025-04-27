@@ -1,0 +1,87 @@
+#manifesto {
+    padding: 60px 15%; /* Увеличили отступы для секции */
+}
+
+.manifesto-container {
+    display: flex;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    gap: 40px; /* Увеличили расстояние между фотографией и текстом */
+}
+
+.manifesto-image {
+    float: left; /* Фотография обтекается текстом */
+    margin-right: 40px; /* Увеличили отступ справа от фотографии */
+    margin-bottom: 20px; /* Отступ снизу от фотографии */
+    shape-outside: margin-box; /* Обтекание текста вокруг фотографии */
+    clip-path: margin-box; /* Плашка текста повторяет форму обтекания */
+}
+
+.manifesto-image img {
+    max-width: 430px; /* Увеличили ширину фотографии */
+    height: auto; /* Пропорциональная высота */
+    border-radius: 15px; /* Закругленные углы */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Увеличили тень */
+}
+
+.manifesto-text {
+    flex: 1; /* Текст занимает оставшееся пространство */
+    background-color: #fff; /* Белая плашка для текста */
+    padding: 30px; /* Внутренние отступы для текста */
+    border-radius: 15px; /* Закругленные углы */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Тень для текстовой плашки */
+    overflow: hidden; /* Скрываем выходящие за пределы элементы */
+}
+
+.manifesto-text h2 {
+    font-size: 32px; /* Увеличили размер заголовка */
+    color: #333; /* Цвет текста */
+    margin-bottom: 25px; /* Увеличили отступ снизу */
+    text-align: center; /* Заголовок по центру */
+}
+
+.manifesto-text p {
+    font-size: 20px; /* Увеличили размер текста */
+    line-height: 1.8; /* Увеличили межстрочный интервал */
+    color: #555; /* Цвет текста */
+    margin-bottom: 20px; /* Увеличили отступ между абзацами */
+    text-align: justify; /* Выравнивание текста по ширине */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    #manifesto {
+        padding: 40px 5%; /* Уменьшили отступы для мобильных */
+    }
+
+    .manifesto-container {
+        flex-direction: column; /* На мобильных фотография и текст идут друг за другом */
+        gap: 20px; /* Уменьшили расстояние между элементами */
+    }
+
+    .manifesto-image {
+        float: none; /* Отключаем обтекание на мобильных */
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center; /* Центрируем фотографию */
+        shape-outside: none; /* Отключаем обтекание на мобильных */
+        clip-path: none; /* Отключаем обтекание на мобильных */
+    }
+
+    .manifesto-image img {
+        max-width: 100%; /* Фотография занимает всю ширину */
+    }
+
+    .manifesto-text {
+        padding: 20px; /* Уменьшили внутренние отступы */
+        text-align: justify; /* Выравнивание текста по ширине */
+    }
+
+    .manifesto-text h2 {
+        font-size: 28px; /* Уменьшили размер заголовка */
+        text-align: center; /* Заголовок по центру */
+    }
+
+    .manifesto-text p {
+        font-size: 16px; /* Уменьшили размер текста */
+    }
+}

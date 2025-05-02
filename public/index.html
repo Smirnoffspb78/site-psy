@@ -35,6 +35,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/about-me.css">
+    <link rel="stylesheet" href="css/manifesto.css">
     <link rel="stylesheet" href="css/request.css">
     <link rel="stylesheet" href="css/driver-line.css">
     <link rel="stylesheet" href="css/contact.css" >
@@ -44,7 +45,8 @@
     <link rel="stylesheet" href="css/education.css">
     <link rel="stylesheet" href="css/openImage.css">
     <link rel="stylesheet" href="css/form-work.css">
-    <link rel="stylesheet" href="css/manifesto.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/section.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <header>
@@ -80,9 +82,9 @@
         <span class="divider-decoration">✦</span>
     </div>
 
-    <section class="transition-white" id="about-me">
-        <div class="about-content">
-            <div class="about-description">
+    <section id="about-me">
+        <div class="section-container">
+            <div class="section-text about-description fade-in-left">
                 <h2>Обо мне: Постникова Людмила</h2>
                 <ul>
                     <li>Практикующий психолог с опытом работы в сфере более трех лет.</li>
@@ -103,7 +105,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="about-image">
+            <div class="section-image fade-in-right">
                 <img src="images/manifesto.png" alt="Моя фотография">
             </div>
         </div>
@@ -115,11 +117,11 @@
     </div>
 
     <section id="manifesto">
-        <div class="manifesto-container">
-            <div class="manifesto-image">
+        <div class="section-container">
+            <div class="section-image fade-in-left">
                 <img src="images/favicon.png" alt="Фотография для манифеста">
             </div>
-            <div class="manifesto-text">
+            <div class="section-text fade-in-right">
                 <h2>Мои ценности</h2>
                 <p>
                     Я психолог, ориентированный на практику с использованием научно-доказательных методов. Моя работа
@@ -145,7 +147,7 @@
         <span class="divider-decoration">✦</span>
     </div>
 
-    <section class="transition-light-gray" id="help">
+    <section id="help">
         <h1>С чем работаю?</h1>
         <p class="requests-intro">Работаю со следующими <span class="highlight">запросами:</span></p>
 
@@ -736,6 +738,25 @@ document.querySelectorAll('.slider-indicators .indicator').forEach((indicator, i
      const menu = document.getElementById('nav-menu');
      menu.classList.remove('active'); // Убираем класс 'active' при нажатии на ссылку
  }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeElements = document.querySelectorAll('.fade-in-left, .fade-in-right');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Опционально: анимация только один раз
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(el => observer.observe(el));
+    });
 </script>
 </body>
 </html>

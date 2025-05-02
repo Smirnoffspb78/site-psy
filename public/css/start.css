@@ -1,109 +1,137 @@
+/* Анимация для плавного появления */
+@keyframes fadeFromBlack {
+    from {
+        opacity: 0;
+        filter: brightness(0);
+    }
+    to {
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Псевдоэлемент для черного фона */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    z-index: -1;
+    animation: fadeOut 1.5s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+/* Общие стили для hero */
 #hero {
-    height: 100vh; /* Высота на весь экран */
-    padding-top: 50px; /* Отступ сверху для меню */
-    background-image: url('../images/lamp2.webp'); /* Путь к твоему фоновому изображению */
-    background-size: cover; /* Покрывает весь экран */
-    background-position: center; /* Центрирует изображение */
-    background-repeat: no-repeat; /* Не повторяет изображение */
-    color: black; /* Цвет текста */
-    display: flex; /* Используем flexbox для центрирования содержимого */
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: center; /* Центрируем по вертикали */
-    text-align: center; /* Центрируем текст */
-    z-index: -1; /* Помещаем за меню */
+    height: 100vh;
+    padding-top: 50px;
+    background-image: url('../images/lamp2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: -1;
+    opacity: 0;
+    filter: brightness(0);
+    animation: fadeFromBlack 1.5s ease-out forwards;
 }
 
-.full-screen-image {
-    width: 100vw; /* Ширина на весь экран */
-    height: 100vh; /* Высота на весь экран */
-    position: absolute; /* Позиционирование для фона */
-    top: 0; /* Верхнее положение */
-    left: 0; /* Левое положение */
-    z-index: -1; /* Устанавливаем изображение на задний план */
-}
-
-.bg-image {
-    position: absolute; /* Абсолютное позиционирование */
-    top: 50%; /* Центруем по вертикали */
-    left: 50%; /* Центруем по горизонтали */
-    min-width: 100%; /* Минимальная ширина 100% */
-    min-height: 100%; /* Минимальная высота 100% */
-    width: auto; /* Автоматическая ширина */
-    height: auto; /* Автоматическая высота */
-    transform: translate(-50%, -50%); /* Центрируем изображение */
-    z-index: -1; /* Устанавливаем изображение на задний план */
-}
-
+/* Контейнер контента */
 .hero-content {
-    position: absolute; /* Позиционирование для точного размещения */
-    top: 20%; /* Отступ сверху в процентах (выше на экране) */
-    left: 5%; /* Отступ слева в процентах (влево на экране) */
-    color: black; /* Цвет текста (можно изменить при необходимости) */
-    text-align: left; /* Выравнивание текста влево */
-     z-index: 3; /* Устанавливаем z-index для наложения поверх других элементов */
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    color: black;
+    text-align: left;
+    z-index: 3;
 }
+
+/* Анимация для каждого элемента */
+.hero-content > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/*!* Последовательное появление элементов с задержкой *!*/
+#current-date-time { animation-delay: 0.3s; }
+.hero-content p:nth-child(2) { animation-delay: 0.6s; }
+.hero-content p:nth-child(3) { animation-delay: 0.9s; }
+.hero-content p:nth-child(4) { animation-delay: 1.2s; }
+.custom-button {
+    animation-delay: 1.5s;
+    display: inline-block; /* Чтобы анимация применялась правильно */
+}
+
 
 .hero-content p {
-    font-size: 25px; /* Размер шрифта (можно увеличить или уменьшить) */
-    margin: 5px 0; /* Отступы между параграфами */
+    font-size: 25px;
+    margin: 5px 0;
+    font-weight: 600;
 }
+
 .stylish-text {
-    font-family: 'Montserrat', sans-serif; /* Или другой выбранный шрифт */
-    font-size: 35px; /* Увеличьте размер шрифта по желанию */
-    font-weight: bold; /* Делаем текст полужирным */
-    color: #333; /* Укажите нужный цвет текста */
-}
-
-#hero p {
-    font-weight: 600; /* Полужирный шрифт */
-}
-
-
-html, body {
-    margin: 0; /* Убирает отступы */
-    padding: 0; /* Убирает поля */
-    height: 100%; /* Высота на весь экран */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
 }
 
 .custom-button {
-    display: inline-block; /* Отображаем как блок для кнопки */
-    padding: 20px 70px; /* Отступы вокруг текста */
-    background-color: black; /* Цвет фона - черный */
-    color: white; /* Цвет текста - белый */
-    text-decoration: none; /* Убираем подчеркивание */
-    border: none; /* Убираем рамку */
-    border-radius: 50px; /* Убираем закругленные углы для прямоугольной формы */
-    transition: background-color 0.3s; /* Плавный переход для эффекта наведения */
-    font-size: 29px; /* Размер шрифта для кнопки */
-    cursor: pointer; /* Изменяем курсор при наведении */
-    margin-top: 20px; /* Отступ сверху для кнопки */
-    text-align: center; /* Центрируем текст */
+    display: inline-block;
+    padding: 20px 70px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    font-size: 29px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
 .custom-button:hover {
-    background-color: #444; /* Цвет при наведении (темно-серый) */
+    background-color: #555;
 }
 
-/* Если кнопка все еще ведет себя как ссылка, добавьте следующие стили */
-.custom-button:visited {
-    color: white; /* Цвет текста после посещения */
-}
-
-/* Медиа-запрос для мобильных устройств */
+/* Медиа-запросы */
 @media (max-width: 768px) {
     .hero-content p {
-        font-size: 18px; /* Уменьшаем размер текста */
+        font-size: 18px;
     }
-
     .stylish-text {
-        font-size: 24px; /* Уменьшаем размер стильного текста */
+        font-size: 24px;
     }
-
     .custom-button {
-        padding: 15px 40px; /* Уменьшаем отступы для кнопки */
-        font-size: 20px; /* Уменьшаем размер шрифта для кнопки */
+        padding: 15px 40px;
+        font-size: 20px;
     }
     #hero {
-        background-position: 33% center; /* Смещает изображение влево */
+        background-position: 33% center;
     }
 }

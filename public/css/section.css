@@ -1,0 +1,112 @@
+/* Универсальный контейнер для секций */
+.section {
+    padding: 60px 15%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Универсальный flex-контейнер для контента */
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Универсальный стиль изображения */
+.section-image {
+    flex: 0 0 28%;
+    max-width: 430px;
+    margin-bottom: 20px;
+}
+
+.section-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-image img:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Универсальный стиль текстового блока */
+.section-text {
+    flex: 1;
+    max-width: 800px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+/* Заголовок внутри текстового блока */
+.section-text h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+a {
+    color: #ff6347; /* Оранжевый цвет */
+    font-weight: bold; /* Полужирный текст */
+    text-decoration: none; /* Убрать подчеркивание (по желанию) */
+}
+
+/* По желанию: при наведении — добавить эффект */
+a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+    color: #e5533d; /* Немного другой оттенок при наведении */
+}
+
+h1 {
+    text-align: center; /* Центрируем все заголовки h1 */
+    font-size: 32px; /* Размер шрифта заголовков */
+    margin-bottom: 20px; /* Отступ снизу для пространства между заголовком и следующим элементом */
+    font-weight: bold; /* Сделаем заголовки жирными */
+    color: #333; /* Цвет заголовков */
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 5%;
+    }
+
+    .section-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-right: 0;
+        float: none;
+        text-align: center;
+    }
+
+    .section-text {
+        padding: 20px;
+    }
+
+    .section-text h2 {
+        font-size: 24px;
+    }
+
+    .section-text p {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 24px; /* Уменьшаем размер шрифта для мобильных устройств */
+    }
+}

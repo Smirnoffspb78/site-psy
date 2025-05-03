@@ -8,7 +8,8 @@
 
 .divider-line {
     flex: 1; /* Занимает доступное пространство */
-    height: 0.5px; /* Высота линии */
+    height: 1px;
+    transform: scaleY(0.5);
     background-color: #000; /* Цвет линии */
     margin: 0 10%; /* Отступы слева и справа в процентах */
 }

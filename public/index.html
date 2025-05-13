@@ -637,13 +637,11 @@
         // Получаем текущие дату и время
         const now = new Date();
 
-        // Форматируем дату и время (без дня недели)
+        // Форматируем дату и время
         const options = {year: 'numeric', month: 'long', day: 'numeric'};
         const date = now.toLocaleDateString('ru-RU', options);
-        const time = now.toLocaleTimeString('ru-RU');
 
-        // Обновляем содержимое элемента на странице с добавлением текста
-        document.getElementById('current-date-time').textContent = 'Сейчас: ' + date + ' ' + time;
+        document.getElementById('current-date-time').textContent = 'Сегодня ' + date;
     }
 
     // Обновляем время каждую секунду

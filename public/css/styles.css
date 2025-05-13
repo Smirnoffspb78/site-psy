@@ -36,7 +36,7 @@ nav a {
     text-decoration: none; /* Убираем подчеркивание */
     padding: 5px 10px; /* Отступы вокруг ссылок */
     transition: background-color 0.3s; /* Плавный переход для эффекта наведения */
-    font-size: 22px
+    font-size: 17px
 }
 
 nav a:hover {

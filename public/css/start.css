@@ -45,7 +45,7 @@
 #hero {
     height: 100vh;
     padding-top: 50px;
-    background-image: url('../images/lamp2.webp');
+    background-image: url('../images/start6.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -110,7 +110,7 @@
 }
 
 /* Медиа-запросы */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .hero-content p {
         font-size: 18px;
     }

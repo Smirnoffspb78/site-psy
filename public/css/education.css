@@ -1,6 +1,6 @@
 #education {
     padding: 20px 15%; /* Отступы для всего раздела */
-    font-size: 20px; /* Увеличение размера шрифта */
+    font-size: 18px; /* Увеличение размера шрифта */
 }
 
 .education-item {
@@ -63,7 +63,12 @@
     text-align: justify; /* Выравнивание текста по ширине */
 }
 
-@media (max-width: 600px) {
+#education .section-text {
+    margin: 0 auto; /* Центрирование по горизонтали */
+    max-width: 1000px; /* Сделаем плашку шире */
+}
+
+@media (max-width: 850px) {
     #education {
         padding: 15px 5%; /* Уменьшаем отступы для мобильных */
         font-size: 16px; /* Уменьшаем размер шрифта */
@@ -98,10 +103,5 @@
         width: 100%; /* Ширина изображения на всю ширину экрана */
         height: auto; /* Пропорциональная высота */
         border-radius: 10px; /* Закругленные углы */
-    }
-
-    .text-content {
-        text-indent: 20px; /* Уменьшаем отступ первой строки */
-        font-size: 16px; /* Уменьшаем размер шрифта для текста */
     }
 }

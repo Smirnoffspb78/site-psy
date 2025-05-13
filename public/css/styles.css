@@ -44,7 +44,7 @@ nav a:hover {
 }
 
 .contact-link {
-    color: #4CAF50; /* Цвет текста */
+    color: orange; /* Цвет текста */
     font-size: 18px; /* Размер шрифта */
     font-weight: bold; /* Полужирный шрифт */
     text-decoration: none; /* Убираем подчеркивание */
@@ -52,7 +52,7 @@ nav a:hover {
 }
 
 .contact-link:hover {
-    color: #45a049; /* Цвет текста при наведении */
+    color: orange; /* Цвет текста при наведении */
 }
 
 .menu-toggle {
@@ -68,7 +68,7 @@ nav a:hover {
 }
 
 /* Стили для мобильной версии */
-@media (max-width: 600px) {
+@media (max-width: 850px) {
     header {
         padding: 5px; /* Уменьшаем отступы для мобильных устройств */
     }

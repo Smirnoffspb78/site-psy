@@ -76,7 +76,7 @@ h1 {
 }
 
 /* Мобильные стили */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .section {
         padding: 40px 5%;
     }
